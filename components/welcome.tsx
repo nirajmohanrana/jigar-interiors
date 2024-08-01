@@ -5,7 +5,7 @@ import { PiCompassRose } from "react-icons/pi";
 
 const Welcome = () => {
   return (
-    <div className="md:flex items-start">
+    <div className="md:flex items-start mt-4 mb-16">
       <div className="bg-foreground text-background w-full md:w-1/2 p-4 animate-in slide-in-from-left duration-500 delay-150">
         <p className="text-3xl font-bold tracking-wide">
           Jigar Interiors Welcomes You!
