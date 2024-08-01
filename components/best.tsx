@@ -18,9 +18,7 @@ const best = [
 
 const Best = () => {
   return (
-    <div
-      className={`w-full flex flex-col justify-center items-center p-8 bg-[url(${HeroImg})] bg-center bg-no-repeat`}
-    >
+    <div className="w-full flex flex-col justify-center items-center p-8 bg-[url('https://raw.githubusercontent.com/nirajmohanrana/jigar-interiors/main/public/assets/hero.jpg')]">
       <p className="text-2xl text-background font-bold tracking-wide">
         Our Best Services
       </p>
