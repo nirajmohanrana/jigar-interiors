@@ -18,14 +18,14 @@ const best = [
 
 const Best = () => {
   return (
-    <div className="w-full flex flex-col justify-center items-center p-8 bg-[url('https://raw.githubusercontent.com/nirajmohanrana/jigar-interiors/main/public/assets/hero.jpg')]">
-      <p className="text-2xl text-background font-bold tracking-wide">
-        Our Best Services
+    <div className="w-full flex flex-col justify-center items-center p-8 bg-[url('https://raw.githubusercontent.com/nirajmohanrana/jigar-interiors/main/public/assets/kitchen.png')]">
+      <p className="text-4xl text-background font-bold tracking-wide [text-shadow:1px_1px_2px_var(--tw-shadow-color)] shadow-foreground">
+        Why We Are Best
       </p>
       <div className="mt-2 w-1/3 h-px bg-primary" />
       <div className="mt-1 w-1/3 h-1 bg-primary" />
 
-      <div className="mx-auto w-full md:max-w-6xl mt-6 grid grid-cols-1 gap-4 md:grid-cols-3">
+      <div className="mx-auto w-full md:max-w-5xl mt-6 grid grid-cols-1 gap-4 md:grid-cols-3">
         {best.map((service) => (
           <div
             key={service.name}

@@ -46,7 +46,7 @@ const services = [
 
 const Services = () => {
   return (
-    <div className="w-full">
+    <div className="w-full px-4 my-16">
       <p className="text-2xl font-bold tracking-wide">Our Best Services</p>
       <div className="mt-2 w-1/3 h-px bg-primary" />
       <div className="mt-1 w-1/3 h-1 bg-primary" />
