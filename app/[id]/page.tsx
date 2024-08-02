@@ -1,57 +1,107 @@
 "use client";
-import { usePathname } from "next/navigation";
+
+import { notFound, usePathname } from "next/navigation";
+
+import { siteConfig } from "@/config/site";
 import Image from "next/image";
+import { Card, CardContent } from "@/components/ui/card";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import {
+  Drawer,
+  DrawerClose,
+  DrawerContent,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerTitle,
+  DrawerTrigger,
+} from "@/components/ui/drawer";
+import { Button } from "@/components/ui/button";
 
-// Define the type for the path data
-interface PathData {
-  url: string;
-  name: string;
-  images?: string[]; // Optional, as not all entries have images
-}
+type PhotoCategory = keyof typeof siteConfig.photosLength;
 
-const paths: PathData[] = [
-  { url: "kitchen", name: "Kitchen", images: [] },
-  { url: "wardrobes", name: "Wardrobes", images: [] },
-  { url: "tv-units", name: "TV Units", images: [] },
-  { url: "bathroom-vanity", name: "Bathroom Vanity", images: [] },
-  { url: "beds-units", name: "Beds Units", images: [] },
-  { url: "sofa-units", name: "Sofa Units", images: [] },
-];
-
-const Page = () => {
+const Gallery = () => {
   const pathname = usePathname();
-  const id = pathname.split("/")[1];
-  const pathData = paths.find((path) => path.url === id);
 
-  if (!pathData) {
-    return (
-      <div className="w-full p-4 md:max-w-7xl">
-        <h1>Not Found</h1>
-      </div>
-    );
+  const name = pathname.split("/")[1] as keyof typeof siteConfig.photosLength;
+
+  if (!name || !(name in siteConfig.photosLength)) {
+    return notFound();
   }
 
+  const length = siteConfig.photosLength[name];
+
+  console.log(
+    `https://raw.githubusercontent.com/nirajmohanrana/jigar-interiors/main/public/assets/${name}/${name}${1}.jpg`
+  );
+
   return (
-    <div className="w-full p-4 md:max-w-7xl">
-      <h1>{pathData.name}</h1>
-      <div className="mt-6 flex flex-wrap gap-1">
-        {pathData.images && pathData.images.length > 0 ? (
-          pathData.images.map((image, index) => (
-            <Image
-              key={index}
-              src={image}
-              alt={pathData.name}
-              width={600}
-              height={600}
-              className="h-36 w-full object-cover"
-            />
-          ))
-        ) : (
-          <p>No images available</p>
-        )}
-      </div>
+    <div className="p-5 flex flex-wrap justify-center items-center gap-6">
+      {Array(length)
+        .fill(0)
+        .map((_, index) => (
+          <Drawer key={index}>
+            <DrawerTrigger asChild>
+              <div className="overflow-hidden w-48 h-48 flex justify-center items-center border p-1">
+                <Image
+                  src={`https://raw.githubusercontent.com/nirajmohanrana/jigar-interiors/main/public/assets/${name}/${name}${
+                    index + 1
+                  }.jpg`}
+                  alt={`${name}-${index + 1}`}
+                  width={400}
+                  height={400}
+                  className="w-full h-full object-cover hover:scale-110 transition-all duration-300 ease-in-out"
+                />
+              </div>
+            </DrawerTrigger>
+            <DrawerContent>
+              <div className="mx-auto w-full max-w-sm">
+                <DrawerHeader>
+                  <DrawerTitle className="uppercase">{name}</DrawerTitle>
+                </DrawerHeader>
+                <div className="p-4 flex justify-center">
+                  <Carousel className="w-full max-w-xs">
+                    <CarouselContent>
+                      {Array.from({ length }).map((_, carouselIndex) => (
+                        <CarouselItem key={carouselIndex}>
+                          <div className="p-1">
+                            <Card>
+                              <CardContent className="flex aspect-square items-center justify-center p-1">
+                                <Image
+                                  src={`https://raw.githubusercontent.com/nirajmohanrana/jigar-interiors/main/public/assets/${name}/${name}${
+                                    carouselIndex + 1
+                                  }.jpg`}
+                                  alt={`${name}-${carouselIndex + 1}`}
+                                  width={400}
+                                  height={400}
+                                  className="w-full h-full object-cover"
+                                />
+                              </CardContent>
+                            </Card>
+                          </div>
+                        </CarouselItem>
+                      ))}
+                    </CarouselContent>
+                    <CarouselPrevious />
+                    <CarouselNext />
+                  </Carousel>
+                </div>
+                <DrawerFooter>
+                  <DrawerClose asChild>
+                    <Button variant="outline">Close</Button>
+                  </DrawerClose>
+                </DrawerFooter>
+              </div>
+            </DrawerContent>
+          </Drawer>
+        ))}
     </div>
   );
 };
 
-export default Page;
+export default Gallery;

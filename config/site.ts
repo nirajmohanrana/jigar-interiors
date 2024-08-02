@@ -8,6 +8,16 @@ export const siteConfig = {
     twitter: "https://twitter.com/shadcn",
     github: "https://github.com/shadcn-ui/ui",
   },
+  photosLength: {
+    bathroom: 10,
+    bedroom: 21,
+    desk: 8,
+    doorHallways: 18,
+    kitchen: 46,
+    sofa: 9,
+    tv: 12,
+    wardrobe: 32,
+  },
 };
 
 export type SiteConfig = typeof siteConfig;
