@@ -41,10 +41,10 @@ const Footer = () => {
         <div className="mt-2 w-1/3 h-px bg-primary" />
         <div className="mt-1 w-1/3 h-1 bg-primary" />
 
-        <div className="mt-6 grid grid-cols-2 gap-6 md:grid-cols-3">
+        <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-3">
           {footerLinks.map((link, index) => (
             <div key={index} className="flex items-center gap-6">
-              <link.icon className="text-2xl text-primary" />
+              <link.icon className="h-6 w-6 text-2xl text-primary" />
               <Link href={link.url}>{link.text}</Link>
             </div>
           ))}
