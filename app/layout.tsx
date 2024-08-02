@@ -21,6 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <link rel="icon" href="logo.png" type="image/png" />
       <body
         className={cn(
           "min-h-screen bg-background font-sans antialiased",
