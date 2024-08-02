@@ -10,27 +10,27 @@ const services = [
   },
   {
     name: "Wardrobes",
-    path: "/wardrobes",
+    path: "/wardrobe",
     url: "https://raw.githubusercontent.com/nirajmohanrana/jigar-interiors/main/public/assets/wardrobe.png",
   },
   {
     name: "TV Units",
-    path: "/tv-units",
+    path: "/tv",
     url: "https://raw.githubusercontent.com/nirajmohanrana/jigar-interiors/main/public/assets/tv-units.jpg",
   },
   {
     name: "Bathroom Vanity",
-    path: "/bathroom-vanity",
+    path: "/bathroom",
     url: "https://raw.githubusercontent.com/nirajmohanrana/jigar-interiors/main/public/assets/bathroom.jpg",
   },
   {
     name: "Beds Units",
-    path: "/beds-units",
+    path: "/bedroom",
     url: "https://raw.githubusercontent.com/nirajmohanrana/jigar-interiors/main/public/assets/bed-units.png",
   },
   {
     name: "Sofa Units",
-    path: "/sofa-units",
+    path: "/sofa",
     url: "https://raw.githubusercontent.com/nirajmohanrana/jigar-interiors/main/public/assets/sofa.png",
   },
 ];

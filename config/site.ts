@@ -12,7 +12,7 @@ export const siteConfig = {
     bathroom: 10,
     bedroom: 21,
     desk: 8,
-    doorHallways: 18,
+    "door-hallways": 18,
     kitchen: 46,
     sofa: 9,
     tv: 12,
@@ -24,20 +24,20 @@ export type SiteConfig = typeof siteConfig;
 
 export const siteNav = [
   {
-    title: "Modular Kitchen & Wardrobes",
-    href: "#kitchen",
+    title: "Modular Kitchen",
+    href: "/kitchen",
   },
   {
-    title: "Customize Furniture",
-    href: "#furniture",
+    title: "Door & Hallways",
+    href: "/door-hallways",
   },
   {
-    title: "Furnishing",
-    href: "#furnishing",
+    title: "Television Set",
+    href: "/tv",
   },
   {
-    title: "Paint Work",
-    href: "#paint",
+    title: "Wardrobe",
+    href: "/wardrobe",
   },
 ];
 

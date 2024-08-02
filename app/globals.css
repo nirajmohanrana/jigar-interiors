@@ -3,15 +3,13 @@
 @tailwind utilities;
 
 .clip-custom {
-  clip-path: polygon(
-    50% 0%,
-    100% 50%,
-    45% 95%,
-    100% 95%,
-    100% 100%,
-    0 100%,
-    0 0
-  );
+  clip-path: polygon(50% 0%, 100% 50%, 45% 100%, 0 100%, 0 0);
+}
+
+@media screen and (max-width: 768px) {
+  .clip-custom {
+    clip-path: polygon(50% 0%, 100% 50%, 45% 100%, 0 100%, 0 0);
+  }
 }
 
 @layer base {
