@@ -10,7 +10,7 @@ const fontSans = FontSans({
 });
 
 export const metadata: Metadata = {
-  title: "jigar-interiors",
+  title: "jigar-interior",
   description: "A place to share interior designs",
 };
 

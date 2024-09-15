@@ -8,12 +8,21 @@ import { AiOutlineFieldTime } from "react-icons/ai";
 import HeroImg from "@/public/assets/hero.jpg";
 
 const best = [
-  { icon: BsHouses, name: "25 Years of Experience" },
-  { icon: LiaUserCheckSolid, name: "Customer Satisfaction" },
-  { icon: TbBulb, name: "Innovative Designers" },
-  { icon: PiCompassRose, name: "Best Qaulity" },
-  { icon: FiThumbsUp, name: "10 Years Warranty" },
-  { icon: AiOutlineFieldTime, name: "On Time Delivery" },
+  { icon: BsHouses, name: <>20 Years of Experience</> },
+  { icon: TbBulb, name: <>Innovative Designers</> },
+  { icon: LiaUserCheckSolid, name: <>Customer Satisfaction</> },
+  { icon: PiCompassRose, name: <>Best and Precise Quality Products</> },
+  {
+    icon: FiThumbsUp,
+    name: (
+      <>
+        <>15-Year Warranty</>
+        <br />
+        <span className="text-xs opacity-50">*T/C applied</span>
+      </>
+    ),
+  },
+  { icon: AiOutlineFieldTime, name: <>Excellent Execution and Guarantee</> },
 ];
 
 const Best = () => {
@@ -25,14 +34,14 @@ const Best = () => {
       <div className="mt-2 w-1/3 h-px bg-primary" />
       <div className="mt-1 w-1/3 h-1 bg-primary" />
 
-      <div className="mx-auto w-full md:max-w-5xl mt-6 grid grid-cols-1 gap-4 md:grid-cols-3">
-        {best.map((service) => (
+      <div className="mx-auto w-full md:max-w-5xl mt-6 grid grid-cols-2 gap-4 md:grid-cols-3">
+        {best.map((service, index) => (
           <div
-            key={service.name}
-            className="py-8 px-2 flex flex-col items-center bg-background text-foreground hover:bg-primary hover:text-background transition-all duration-500"
+            key={index}
+            className="py-8 px-2 flex flex-col items-center bg-background text-foreground hover:bg-primary hover:text-background transition-all duration-500 cursor-pointer"
           >
             <service.icon className="text-5xl" />
-            <p className="mt-6 text-lg font-bold">{service.name}</p>
+            <p className="mt-6 text-center text-lg font-bold">{service.name}</p>
           </div>
         ))}
       </div>

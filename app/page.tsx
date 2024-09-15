@@ -1,3 +1,4 @@
+import "leaflet/dist/leaflet.css";
 import Best from "@/components/best";
 import Footer from "@/components/footer";
 import Hero from "@/components/hero";
